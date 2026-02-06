@@ -51,7 +51,7 @@ body::before{
   background-repeat: no-repeat;
 
   /* keep it subtle */
-  opacity: 0.20;
+  opacity: 0.30;
 
   /* blend so it feels integrated, not pasted */
   mix-blend-mode: screen;
