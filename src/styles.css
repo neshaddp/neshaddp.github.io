@@ -45,7 +45,7 @@ body::before{
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("/images/bg-astro.jpg");
+  background-image: url("/images/bg-astro.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
