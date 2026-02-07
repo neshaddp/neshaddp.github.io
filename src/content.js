@@ -186,14 +186,14 @@ export const awards = [
   "Galonsky International Travel Award (MSU)",
   "NNRC Scholarship (UiO)",
   "FRIB Fellowships (MSU)",
-  "Herbert T. Graham Scholarship (MSU)"
-  "Graduate School Travel Fellowship (MSU)"
-  "Prof. Lakshman Dissanayake Gold Medal for Excellence in Physics (UoP)"
-  "Prof. George Dissanaike Memorial Gold Medal in Physics (UoP)"
-  "Dr. C.A. Hevavitharana Memorial Prize in Physics (UoP)"
-  "Prof. A.W. Wolfendale Prize in Physics (UoP)"
-  "University of Peradeniya Award for Academic Excellence"
-  "Eramudugolla Dunuwila Prize in Mathematics (UoP)"
+  "Herbert T. Graham Scholarship (MSU)",
+  "Graduate School Travel Fellowship (MSU)",
+  "Prof. Lakshman Dissanayake Gold Medal for Excellence in Physics (UoP)",
+  "Prof. George Dissanaike Memorial Gold Medal in Physics (UoP)",
+  "Dr. C.A. Hevavitharana Memorial Prize in Physics (UoP)",
+  "Prof. A.W. Wolfendale Prize in Physics (UoP)",
+  "University of Peradeniya Award for Academic Excellence",
+  "Eramudugolla Dunuwila Prize in Mathematics (UoP)",
   "Merit Award in SURS Symposium (UoP)"
 ];
 
