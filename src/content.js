@@ -173,11 +173,13 @@ export const teaching = [
   },
   {
     place: "University of Peradeniya",
-    timeframe: "Aug 2022 – Dec 2024",
+    timeframe: "Aug 2021 - Jul 2022",
     items: [
-      "Instructor in charge: PHY 252 — Introductory Physics Laboratory II",
-      "Instructor in charge: ISP 205L — Visions of the Laboratory",
-      "Tutor in charge: PHY 415 — Mathematical Modeling in Physics"
+      "Instructor in charge: Nuclear Physics Laboratory ",
+      "Instructor in charge: Advanced Level Physics Laboratory",
+      "Tutor in charge: PH 430 — Quantum Mechanics I",
+      "Tutor in charge: PH 431 — Quantum Mechanics II",
+      "Tutor in charge: PH 458 — General Relativity"
     ]
   }
 ];
@@ -197,10 +199,6 @@ export const awards = [
   "Merit Award in SURS Symposium"
 ];
 
-export const service = [
-  "APS (member), Sigma Xi (member), Phi Kappa Phi (member)",
-  "IReNA / JINA-CEE / CeNAM (member)"
-];
 
 
 export const contactForm = {
