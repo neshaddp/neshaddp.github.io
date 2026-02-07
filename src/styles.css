@@ -631,7 +631,4 @@ input:focus, textarea:focus{
   text-justify: inter-word;
 }
 
-@media (max-width: 640px){
-  .leadJustify { text-align: left; }
-}
 
