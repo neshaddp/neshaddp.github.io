@@ -161,6 +161,10 @@ export default function App() {
               <h1 className="h1">
                 <span className="accent">{profile.name}</span>
               </h1>
+              <p className="micro">
+                <span className="muted">{profile.affiliation}</span> •{" "}
+                <span className="muted">{profile.location}</span>
+              </p>
 
               <p className="kicker">{profile.title}</p>
               {Array.isArray(profile.subtitle) ? (
@@ -175,10 +179,7 @@ export default function App() {
 
 
               {/* Requested: remove ALL buttons/links from Home hero */}
-              <p className="micro">
-                <span className="muted">{profile.affiliation}</span> •{" "}
-                <span className="muted">{profile.location}</span>
-              </p>
+  
             </motion.div>
 
             <motion.aside
