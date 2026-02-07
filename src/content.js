@@ -12,7 +12,7 @@ export const profile = {
   headshotUrl: "/images/profile.webp"
 };
 
-// Header navigation (added News, removed Talks)
+// Header navigation
 export const nav = [
   { id: "home", label: "Home" },
   { id: "news", label: "News" },
@@ -24,31 +24,50 @@ export const nav = [
   { id: "contact", label: "Contact" }
 ];
 
-// NEWS (you will edit this a lot in the future)
-// date format: YYYY-MM-DD (this helps automatic ordering)
+// Social links (icons rendered in Contact section)
+// You can update URLs later here only.
+export const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/neshad1996?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    icon: "linkedin"
+  },
+  {
+    label: "Google Scholar",
+    href: "#",
+    icon: "scholar"
+  },
+  {
+    label: "ORCID",
+    href: "#",
+    icon: "orcid"
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/neshad1996",
+    icon: "github"
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/18pC7PkZM7/?mibextid=wwXIfr",
+    icon: "facebook"
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    icon: "instagram"
+  }
+];
+
+// NEWS (edit this list in the future)
 export const news = [
   {
     id: "news-2026-02-06",
     date: "2026-02-06",
     title: "Website launched",
     summary: "New personal academic website is live with research portfolio and publications.",
-    images: ["/images/news/sample1.webp"],
-    details: [
-      "Modern React site hosted on GitHub Pages.",
-      "Expandable News section to avoid a long homepage."
-    ],
-    links: []
-  },
-  {
-    id: "news-2026-01-20",
-    date: "2026-01-20",
-    title: "Project milestone",
-    summary: "Major progress on CE-Oslo analysis pipeline and model validation.",
-    images: ["/images/news/sample2.webp", "/images/news/sample3.webp"],
-    details: [
-      "Cross-checks completed across multiple normalization choices.",
-      "Next: integrate results into reaction-rate sensitivity studies."
-    ],
+    images: [],
+    details: ["React + Vite site deployed on GitHub Pages.", "News items are expandable to keep the page concise."],
     links: []
   }
 ];
@@ -94,10 +113,7 @@ export const projects = [
     tags: ["neutrinos", "charge-exchange", "208Pb"],
     summary:
       "Determining neutrino–208Pb CC cross sections by extracting Gamow–Teller strength from charge-exchange reactions.",
-    bullets: [
-      "Based on 208Pb(3He,t)208Bi reaction data",
-      "Supports neutrino detection / nuclear response applications"
-    ],
+    bullets: ["Based on 208Pb(3He,t)208Bi reaction data", "Supports neutrino detection / nuclear response applications"],
     links: []
   },
   {
@@ -109,10 +125,7 @@ export const projects = [
     tags: ["instrumentation", "neutrons", "scintillators"],
     summary:
       "Contributing to LENDA upgrade work by testing and evaluating scintillator materials for improved neutron detection.",
-    bullets: [
-      "Hands-on testing & evaluation",
-      "Supports experimental campaigns at FRIB"
-    ],
+    bullets: ["Hands-on testing & evaluation", "Supports experimental campaigns at FRIB"],
     links: []
   }
 ];
@@ -142,12 +155,6 @@ export const publications = [
     venue: "Physical Review C (PRC)",
     status: "Published",
     links: []
-  },
-  {
-    title: "Single-nucleon transfer unveils NiCu cycle in astrophysical X-ray bursts",
-    venue: "PRL",
-    status: "Submitted",
-    links: [{ label: "Preprint", href: "https://doi.org/10.21203/rs.3.rs-7660136/v1" }]
   }
 ];
 
@@ -160,16 +167,6 @@ export const teaching = [
       "Instructor in charge: ISP 205L — Visions of the Laboratory",
       "Tutor in charge: PHY 415 — Mathematical Modeling in Physics"
     ]
-  },
-  {
-    place: "University of Peradeniya",
-    timeframe: "Aug 2021 – Jul 2022",
-    items: [
-      "Instructor: Nuclear Physics Laboratory (M.Sc.)",
-      "Instructor: Advanced Laboratory sessions (Honors program)",
-      "Tutor: Quantum Mechanics I/II; General Relativity",
-      "Help desk: PH 230 — Quantum Mechanics and Atomic Physics"
-    ]
   }
 ];
 
@@ -177,23 +174,18 @@ export const awards = [
   "Galonsky International Travel Award (MSU)",
   "NNRC Scholarship (University of Oslo)",
   "FRIB Fellowships (MSU)",
-  "Herbert T. Graham Scholarship (MSU)",
-  "Graduate School Travel Fellowship (MSU)",
-  "Gold medals & prizes (UoP): Physics excellence and awards",
-  "Merit award (UoP symposium)"
+  "Herbert T. Graham Scholarship (MSU)"
 ];
 
 export const service = [
   "APS (member), Sigma Xi (member), Phi Kappa Phi (member)",
-  "IReNA / JINA-CEE / CeNAM (member)",
-  "Former Secretary — Sri Lankan Student Association at MSU"
+  "IReNA / JINA-CEE / CeNAM (member)"
 ];
 
-// CONTACT FORM CONFIG (kept in content.js so you edit one file)
-// Recommended: use Formspree so messages go to your inbox without a backend.
-// How: create a form on Formspree → it gives you an endpoint like https://formspree.io/f/xxxxabcd
+// CONTACT FORM CONFIG
+// To receive messages directly in your inbox on a static site, use Formspree.
+// Create a form on Formspree, then paste endpoint here (e.g., https://formspree.io/f/xxxxabcd).
 export const contactForm = {
-  // Put your Formspree endpoint here. Leave "" to use mailto fallback.
   endpoint: "",
   emailTo: "devanes1@msu.edu",
   subjectPrefix: "Website message"
