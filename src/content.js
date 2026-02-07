@@ -163,7 +163,7 @@ export const publications = [
     title: "Single-nucleon transfer unveils NiCu cycle in astrophysical X-ray bursts",
     venue: "Physical Review Letters (PRL)",
     status: "Submitted",
-    links: [{"https://doi.org/10.21203/rs.3.rs-7660136/v1"}]
+    links: [{href:"https://doi.org/10.21203/rs.3.rs-7660136/v1"}]
     /*links: [{ label: "Preprint", href: "https://doi.org/10.21203/rs.3.rs-7660136/v1" }]*/
   },
   {
