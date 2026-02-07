@@ -1,13 +1,22 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { profile, nav, projects, publications, teaching, awards, service } from "./content";
+import {
+  profile,
+  nav,
+  news,
+  projects,
+  publications,
+  teaching,
+  awards,
+  service,
+  contactForm
+} from "./content";
 
 function useActiveSection(sectionIds) {
   const [active, setActive] = useState(sectionIds[0] || "home");
 
   useEffect(() => {
     const els = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
-
     const io = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -17,12 +26,18 @@ function useActiveSection(sectionIds) {
       },
       { rootMargin: "-35% 0px -55% 0px", threshold: [0.1, 0.2, 0.4, 0.6] }
     );
-
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, [sectionIds]);
 
   return active;
+}
+
+function formatDate(iso) {
+  // iso: YYYY-MM-DD
+  const [y, m, d] = iso.split("-").map((x) => parseInt(x, 10));
+  const dt = new Date(y, (m || 1) - 1, d || 1);
+  return dt.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
 }
 
 export default function App() {
@@ -31,13 +46,23 @@ export default function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [openProject, setOpenProject] = useState(null);
+  const [openNews, setOpenNews] = useState(null);
 
+  // News expand/collapse
+  const [showAllNews, setShowAllNews] = useState(false);
+
+  const sortedNews = useMemo(() => {
+    return [...(news || [])].sort((a, b) => (a.date < b.date ? 1 : -1));
+  }, []);
+
+  const visibleNews = showAllNews ? sortedNews : sortedNews.slice(0, 6);
 
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") {
         setMenuOpen(false);
         setOpenProject(null);
+        setOpenNews(null);
       }
     };
     window.addEventListener("keydown", onKey);
@@ -55,27 +80,19 @@ export default function App() {
             <span className="brandText">{profile.name}</span>
           </a>
 
-          {/* Centered links (desktop) */}
           <nav className="navLinks" aria-label="Primary">
             {nav.map((n) => (
-              <a
-                key={n.id}
-                href={`#${n.id}`}
-                className={`navLink ${active === n.id ? "active" : ""}`}
-              >
+              <a key={n.id} href={`#${n.id}`} className={`navLink ${active === n.id ? "active" : ""}`}>
                 {n.label}
               </a>
             ))}
           </nav>
 
-          {/* Right-side actions */}
           <div className="navActions">
-
             <a className="btn small" href={profile.cvUrl} target="_blank" rel="noreferrer">
               Download CV
             </a>
 
-            {/* Mobile menu button */}
             <button className="iconBtn burger" onClick={() => setMenuOpen(true)} aria-label="Open menu">
               ☰
             </button>
@@ -124,7 +141,7 @@ export default function App() {
               </div>
 
               <div className="menuActions">
-                <a className="btn" href={profile.cvUrl} target="_blank" rel="noreferrer">
+                <a className="btn" href={profile.cvUrl} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
                   Download CV
                 </a>
               </div>
@@ -142,7 +159,6 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: "easeOut" }}
             >
-              {/* Requested: show your name as main heading with gradient blend */}
               <h1 className="h1">
                 <span className="accent">{profile.name}</span>
               </h1>
@@ -150,18 +166,11 @@ export default function App() {
               <p className="kicker">{profile.title}</p>
               <p className="lead">{profile.subtitle}</p>
 
+              {/* Requested: remove links/chips under home text */}
               <div className="ctaRow">
                 <a className="btn" href="#research">Research</a>
-                <a className="btn ghost" href={profile.cvUrl} target="_blank" rel="noreferrer">CV (PDF)</a>
+                <a className="btn ghost" href="#news">News</a>
                 <a className="btn ghost" href={`mailto:${profile.email}`}>Email</a>
-              </div>
-
-              <div className="chips">
-                {profile.links.map((l) => (
-                  <a key={l.label} className="chip" href={l.href} target="_blank" rel="noreferrer">
-                    {l.label}
-                  </a>
-                ))}
               </div>
 
               <p className="micro">
@@ -170,7 +179,6 @@ export default function App() {
               </p>
             </motion.div>
 
-            {/* Requested: replace research snapshot with your photo */}
             <motion.aside
               className="profileCard"
               initial={{ opacity: 0, y: 18 }}
@@ -196,6 +204,63 @@ export default function App() {
             </motion.aside>
           </div>
         </section>
+
+        {/* NEWS */}
+        <Section
+          id="news"
+          title="News"
+          subtitle="Click an item for details. Use “Show all” to expand the full timeline."
+        >
+          <div className="newsTopRow">
+            <div className="muted">
+              Showing {visibleNews.length} of {sortedNews.length}
+            </div>
+
+            {sortedNews.length > 6 ? (
+              <button
+                className="btn small ghost"
+                type="button"
+                onClick={() => setShowAllNews((v) => !v)}
+              >
+                {showAllNews ? "Collapse" : "Show all news"}
+              </button>
+            ) : null}
+          </div>
+
+          <div className="newsList">
+            {visibleNews.map((n, idx) => (
+              <motion.button
+                key={n.id}
+                className="newsItem"
+                onClick={() => setOpenNews(n)}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.99 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.45, delay: idx * 0.03 }}
+              >
+                <div className="newsLeft">
+                  <div className="newsDate">{formatDate(n.date)}</div>
+                  <div className="newsTitle">{n.title}</div>
+                  <div className="muted">{n.summary}</div>
+                </div>
+
+                {n.images?.length ? (
+                  <div className="newsThumb">
+                    <img
+                      src={n.images[0]}
+                      alt={n.title}
+                      onError={(e) => { e.currentTarget.style.display = "none"; }}
+                    />
+                  </div>
+                ) : (
+                  <div className="newsThumb placeholder" aria-hidden="true" />
+                )}
+              </motion.button>
+            ))}
+          </div>
+        </Section>
 
         {/* RESEARCH */}
         <Section id="research" title="Research" subtitle="Selected projects — click a card for details.">
@@ -312,7 +377,7 @@ export default function App() {
         </Section>
 
         {/* CONTACT */}
-        <Section id="contact" title="Contact" subtitle="The fastest way to reach me.">
+        <Section id="contact" title="Contact" subtitle="Send a message directly from the website.">
           <div className="twoCol">
             <div className="card">
               <h3 className="h4">Email</h3>
@@ -325,28 +390,10 @@ export default function App() {
               <h3 className="h4">Affiliation</h3>
               <p className="muted">{profile.affiliation}</p>
 
-              <div className="spacer" />
-
-              <a className="btn" href={profile.cvUrl} target="_blank" rel="noreferrer">
-                Download CV
-              </a>
+              {/* Requested: remove Download CV button here (keep only header) */}
             </div>
 
-            <div className="card">
-              <h3 className="h4">Links</h3>
-              <div className="chips">
-                {profile.links.map((l) => (
-                  <a key={l.label} className="chip" href={l.href} target="_blank" rel="noreferrer">
-                    {l.label}
-                  </a>
-                ))}
-              </div>
-
-              <div className="spacer" />
-              <p className="muted tiny">
-                Update your Scholar/ORCID/LinkedIn URLs in <code>src/content.js</code>.
-              </p>
-            </div>
+            <ContactForm />
           </div>
         </Section>
 
@@ -355,11 +402,152 @@ export default function App() {
 
       <AnimatePresence>
         {openProject ? (
-          <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />
+          <DetailModal
+            kind="Project"
+            title={openProject.title}
+            subtitle={openProject.role}
+            pill={openProject.timeframe}
+            images={openProject.image ? [openProject.image] : []}
+            summary={openProject.summary}
+            bullets={openProject.bullets || []}
+            links={openProject.links || []}
+            onClose={() => setOpenProject(null)}
+          />
+        ) : null}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {openNews ? (
+          <DetailModal
+            kind="News"
+            title={openNews.title}
+            subtitle={formatDate(openNews.date)}
+            pill="Update"
+            images={openNews.images || []}
+            summary={openNews.summary}
+            bullets={openNews.details || []}
+            links={openNews.links || []}
+            onClose={() => setOpenNews(null)}
+          />
         ) : null}
       </AnimatePresence>
     </div>
   );
+
+  function ContactForm() {
+    const [name, setName] = useState("");
+    const [fromEmail, setFromEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+    const [status, setStatus] = useState({ kind: "idle", text: "" });
+
+    async function onSubmit(e) {
+      e.preventDefault();
+      setStatus({ kind: "loading", text: "Sending..." });
+
+      const fullSubject = `${contactForm.subjectPrefix}: ${subject || "Message"}`;
+      const payload = {
+        name,
+        email: fromEmail,
+        subject: fullSubject,
+        message
+      };
+
+      // If you set Formspree endpoint in content.js, this sends directly to your inbox.
+      if (contactForm.endpoint) {
+        try {
+          const res = await fetch(contactForm.endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          if (!res.ok) throw new Error("Network error");
+          setStatus({ kind: "success", text: "Message sent. Thank you!" });
+          setName("");
+          setFromEmail("");
+          setSubject("");
+          setMessage("");
+        } catch {
+          setStatus({ kind: "error", text: "Could not send. Please try again or email me directly." });
+        }
+        return;
+      }
+
+      // Fallback: open user's email client (no backend needed)
+      const mailtoSubject = encodeURIComponent(fullSubject);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${fromEmail}\n\n${message}`
+      );
+      window.location.href = `mailto:${contactForm.emailTo}?subject=${mailtoSubject}&body=${body}`;
+      setStatus({ kind: "success", text: "Opening your email app..." });
+    }
+
+    return (
+      <div className="card">
+        <h3 className="h4">Send a message</h3>
+        <p className="muted tiny">
+          {contactForm.endpoint
+            ? "This form sends directly to my inbox."
+            : "Tip: To send directly to my inbox without opening your email app, add a Formspree endpoint in src/content.js."}
+        </p>
+
+        <form className="contactForm" onSubmit={onSubmit}>
+          <div className="formGrid">
+            <label className="field">
+              <span className="labelText">Name</span>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                placeholder="Your name"
+              />
+            </label>
+
+            <label className="field">
+              <span className="labelText">Email</span>
+              <input
+                value={fromEmail}
+                onChange={(e) => setFromEmail(e.target.value)}
+                type="email"
+                required
+                placeholder="you@email.com"
+              />
+            </label>
+          </div>
+
+          <label className="field">
+            <span className="labelText">Title</span>
+            <input
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              placeholder="Subject"
+            />
+          </label>
+
+          <label className="field">
+            <span className="labelText">Message</span>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              placeholder="Write your message..."
+              rows={6}
+            />
+          </label>
+
+          <div className="formActions">
+            <button className="btn" type="submit" disabled={status.kind === "loading"}>
+              {status.kind === "loading" ? "Sending..." : "Send message"}
+            </button>
+
+            {status.kind === "success" ? <span className="status ok">{status.text}</span> : null}
+            {status.kind === "error" ? <span className="status bad">{status.text}</span> : null}
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 function Section({ id, title, subtitle, children }) {
@@ -382,7 +570,7 @@ function Section({ id, title, subtitle, children }) {
   );
 }
 
-function ProjectModal({ project, onClose }) {
+function DetailModal({ kind, title, subtitle, pill, images, summary, bullets, links, onClose }) {
   return (
     <motion.div
       className="modalBackdrop"
@@ -401,15 +589,15 @@ function ProjectModal({ project, onClose }) {
         onMouseDown={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
-        aria-label={project.title}
+        aria-label={`${kind}: ${title}`}
       >
         <div className="modalTop">
           <div>
             <div className="rowTop">
-              <h3 className="h3">{project.title}</h3>
-              <span className="pill">{project.timeframe}</span>
+              <h3 className="h3">{title}</h3>
+              <span className="pill">{pill}</span>
             </div>
-            <p className="muted">{project.role}</p>
+            <p className="muted">{subtitle}</p>
           </div>
 
           <button className="iconBtn" onClick={onClose} aria-label="Close">
@@ -418,23 +606,31 @@ function ProjectModal({ project, onClose }) {
         </div>
 
         <div className="modalBody">
-          <div className="modalMedia">
-            <img
-              src={project.image}
-              alt={project.title}
-              onError={(e) => { e.currentTarget.style.display = "none"; }}
-            />
-          </div>
+          {images?.length ? (
+            <div className="modalGallery">
+              {images.slice(0, 3).map((src) => (
+                <div key={src} className="modalMedia">
+                  <img
+                    src={src}
+                    alt={title}
+                    onError={(e) => { e.currentTarget.style.display = "none"; }}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : null}
 
-          <p className="leadSmall">{project.summary}</p>
+          <p className="leadSmall">{summary}</p>
 
-          <ul className="bullets">
-            {project.bullets.map((b) => <li key={b}>{b}</li>)}
-          </ul>
+          {bullets?.length ? (
+            <ul className="bullets">
+              {bullets.map((b) => <li key={b}>{b}</li>)}
+            </ul>
+          ) : null}
 
-          {project.links?.length ? (
+          {links?.length ? (
             <div className="modalLinks">
-              {project.links.map((l) => (
+              {links.map((l) => (
                 <a key={l.label} className="btn small ghost" href={l.href} target="_blank" rel="noreferrer">
                   {l.label}
                 </a>
