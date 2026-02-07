@@ -163,7 +163,16 @@ export default function App() {
               </h1>
 
               <p className="kicker">{profile.title}</p>
-              <p className="lead">{profile.subtitle}</p>
+              {Array.isArray(profile.subtitle) ? (
+                <div className="leadStack">
+                  {profile.subtitle.map((para, i) => (
+                    <p className="lead leadJustify" key={i}>{para}</p>
+                  ))}
+                </div>
+              ) : (
+                <p className="lead leadJustify">{profile.subtitle}</p>
+              )}
+
 
               {/* Requested: remove ALL buttons/links from Home hero */}
               <p className="micro">
