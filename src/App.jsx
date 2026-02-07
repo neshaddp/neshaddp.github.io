@@ -9,7 +9,8 @@ import {
   teaching,
   awards,
   service,
-  contactForm
+  contactForm,
+  socialLinks
 } from "./content";
 
 function useActiveSection(sectionIds) {
@@ -34,7 +35,6 @@ function useActiveSection(sectionIds) {
 }
 
 function formatDate(iso) {
-  // iso: YYYY-MM-DD
   const [y, m, d] = iso.split("-").map((x) => parseInt(x, 10));
   const dt = new Date(y, (m || 1) - 1, d || 1);
   return dt.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
@@ -48,14 +48,13 @@ export default function App() {
   const [openProject, setOpenProject] = useState(null);
   const [openNews, setOpenNews] = useState(null);
 
-  // News expand/collapse
   const [showAllNews, setShowAllNews] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
-  const sortedNews = useMemo(() => {
-    return [...(news || [])].sort((a, b) => (a.date < b.date ? 1 : -1));
-  }, []);
-
+  const sortedNews = useMemo(() => [...(news || [])].sort((a, b) => (a.date < b.date ? 1 : -1)), []);
   const visibleNews = showAllNews ? sortedNews : sortedNews.slice(0, 6);
+
+  const visibleProjects = showAllProjects ? (projects || []) : (projects || []).slice(0, 4);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -166,13 +165,7 @@ export default function App() {
               <p className="kicker">{profile.title}</p>
               <p className="lead">{profile.subtitle}</p>
 
-              {/* Requested: remove links/chips under home text */}
-              <div className="ctaRow">
-                <a className="btn" href="#research">Research</a>
-                <a className="btn ghost" href="#news">News</a>
-                <a className="btn ghost" href={`mailto:${profile.email}`}>Email</a>
-              </div>
-
+              {/* Requested: remove ALL buttons/links from Home hero */}
               <p className="micro">
                 <span className="muted">{profile.affiliation}</span> •{" "}
                 <span className="muted">{profile.location}</span>
@@ -206,22 +199,14 @@ export default function App() {
         </section>
 
         {/* NEWS */}
-        <Section
-          id="news"
-          title="News"
-          subtitle="Click an item for details. Use “Show all” to expand the full timeline."
-        >
+        <Section id="news" title="News" subtitle="Click an item for details. Use “Show all” to expand the full timeline.">
           <div className="newsTopRow">
             <div className="muted">
               Showing {visibleNews.length} of {sortedNews.length}
             </div>
 
             {sortedNews.length > 6 ? (
-              <button
-                className="btn small ghost"
-                type="button"
-                onClick={() => setShowAllNews((v) => !v)}
-              >
+              <button className="btn small ghost" type="button" onClick={() => setShowAllNews((v) => !v)}>
                 {showAllNews ? "Collapse" : "Show all news"}
               </button>
             ) : null}
@@ -248,11 +233,7 @@ export default function App() {
 
                 {n.images?.length ? (
                   <div className="newsThumb">
-                    <img
-                      src={n.images[0]}
-                      alt={n.title}
-                      onError={(e) => { e.currentTarget.style.display = "none"; }}
-                    />
+                    <img src={n.images[0]} alt={n.title} onError={(e) => { e.currentTarget.style.display = "none"; }} />
                   </div>
                 ) : (
                   <div className="newsThumb placeholder" aria-hidden="true" />
@@ -264,8 +245,20 @@ export default function App() {
 
         {/* RESEARCH */}
         <Section id="research" title="Research" subtitle="Selected projects — click a card for details.">
+          <div className="newsTopRow">
+            <div className="muted">
+              Showing {visibleProjects.length} of {(projects || []).length}
+            </div>
+
+            {(projects || []).length > 4 ? (
+              <button className="btn small ghost" type="button" onClick={() => setShowAllProjects((v) => !v)}>
+                {showAllProjects ? "Collapse" : "Show all projects"}
+              </button>
+            ) : null}
+          </div>
+
           <div className="grid">
-            {projects.map((p, idx) => (
+            {visibleProjects.map((p, idx) => (
               <motion.button
                 key={p.id}
                 className="projectCard"
@@ -278,11 +271,7 @@ export default function App() {
                 transition={{ duration: 0.45, delay: idx * 0.04 }}
               >
                 <div className="projectMedia">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    onError={(e) => { e.currentTarget.style.display = "none"; }}
-                  />
+                  <img src={p.image} alt={p.title} onError={(e) => { e.currentTarget.style.display = "none"; }} />
                   <div className="projectMediaOverlay" />
                 </div>
 
@@ -390,7 +379,25 @@ export default function App() {
               <h3 className="h4">Affiliation</h3>
               <p className="muted">{profile.affiliation}</p>
 
-              {/* Requested: remove Download CV button here (keep only header) */}
+              {/* Social icons row */}
+              <div className="spacer" />
+              <h3 className="h4">Profiles</h3>
+              <div className="socialRow">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    className="socialIcon"
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                  >
+                    <SocialIcon name={s.icon} />
+                  </a>
+                ))}
+              </div>
+              <p className="muted tiny">Update URLs in <code>src/content.js</code>.</p>
             </div>
 
             <ContactForm />
@@ -446,14 +453,8 @@ export default function App() {
       setStatus({ kind: "loading", text: "Sending..." });
 
       const fullSubject = `${contactForm.subjectPrefix}: ${subject || "Message"}`;
-      const payload = {
-        name,
-        email: fromEmail,
-        subject: fullSubject,
-        message
-      };
+      const payload = { name, email: fromEmail, subject: fullSubject, message };
 
-      // If you set Formspree endpoint in content.js, this sends directly to your inbox.
       if (contactForm.endpoint) {
         try {
           const res = await fetch(contactForm.endpoint, {
@@ -461,24 +462,18 @@ export default function App() {
             headers: { "Content-Type": "application/json", Accept: "application/json" },
             body: JSON.stringify(payload)
           });
-
           if (!res.ok) throw new Error("Network error");
+
           setStatus({ kind: "success", text: "Message sent. Thank you!" });
-          setName("");
-          setFromEmail("");
-          setSubject("");
-          setMessage("");
+          setName(""); setFromEmail(""); setSubject(""); setMessage("");
         } catch {
           setStatus({ kind: "error", text: "Could not send. Please try again or email me directly." });
         }
         return;
       }
 
-      // Fallback: open user's email client (no backend needed)
       const mailtoSubject = encodeURIComponent(fullSubject);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${fromEmail}\n\n${message}`
-      );
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${fromEmail}\n\n${message}`);
       window.location.href = `mailto:${contactForm.emailTo}?subject=${mailtoSubject}&body=${body}`;
       setStatus({ kind: "success", text: "Opening your email app..." });
     }
@@ -489,19 +484,14 @@ export default function App() {
         <p className="muted tiny">
           {contactForm.endpoint
             ? "This form sends directly to my inbox."
-            : "Tip: To send directly to my inbox without opening your email app, add a Formspree endpoint in src/content.js."}
+            : "To send directly to my inbox without opening an email app, add a Formspree endpoint in src/content.js."}
         </p>
 
         <form className="contactForm" onSubmit={onSubmit}>
           <div className="formGrid">
             <label className="field">
               <span className="labelText">Name</span>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                placeholder="Your name"
-              />
+              <input value={name} onChange={(e) => setName(e.target.value)} required placeholder="Your name" />
             </label>
 
             <label className="field">
@@ -518,22 +508,12 @@ export default function App() {
 
           <label className="field">
             <span className="labelText">Title</span>
-            <input
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              placeholder="Subject"
-            />
+            <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Subject" />
           </label>
 
           <label className="field">
             <span className="labelText">Message</span>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              placeholder="Write your message..."
-              rows={6}
-            />
+            <textarea value={message} onChange={(e) => setMessage(e.target.value)} required placeholder="Write your message..." rows={6} />
           </label>
 
           <div className="formActions">
@@ -547,6 +527,73 @@ export default function App() {
         </form>
       </div>
     );
+  }
+}
+
+function SocialIcon({ name }) {
+  // Minimal inline SVG icons (no extra libraries needed)
+  const common = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" };
+
+  switch (name) {
+    case "linkedin":
+      return (
+        <svg {...common}>
+          <path d="M4 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z" stroke="currentColor" strokeWidth="2" />
+          <path d="M6 10.5H2V22h4V10.5Z" fill="currentColor" opacity="0.9" />
+          <path d="M10 10.5h3.7v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.4 4.7 5.6V22h-4v-5.2c0-1.2 0-2.8-1.9-2.8s-2.2 1.3-2.2 2.7V22h-4V10.5Z" fill="currentColor" opacity="0.9" />
+        </svg>
+      );
+    case "github":
+      return (
+        <svg {...common}>
+          <path
+            d="M12 2.5c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.1 6.9 9.4.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.1-3.4-1.1-.4-1-1-1.3-1-1.3-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.7-1.3-2.2-.2-4.4-1.1-4.4-4.9 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.7 1a9.4 9.4 0 0 1 4.9 0c1.9-1.2 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.6 1 2.7 0 3.8-2.2 4.7-4.4 4.9.4.3.7 1 .7 2v3c0 .3.2.6.7.5A10 10 0 0 0 22 12.5c0-5.5-4.5-10-10-10Z"
+            fill="currentColor"
+          />
+        </svg>
+      );
+    case "facebook":
+      return (
+        <svg {...common}>
+          <path
+            d="M14 8.7V7.2c0-.7.5-1.2 1.2-1.2H17V2.6h-2.4C12.3 2.6 11 4 11 6.2v2.5H8.5V12H11v9.5h3.4V12H17l.6-3.3H14Z"
+            fill="currentColor"
+          />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg {...common}>
+          <path
+            d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9A4.7 4.7 0 0 1 16.5 21.2h-9A4.7 4.7 0 0 1 2.8 16.5v-9A4.7 4.7 0 0 1 7.5 2.8Z"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" stroke="currentColor" strokeWidth="2" />
+          <path d="M17.4 6.7h.01" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+        </svg>
+      );
+    case "orcid":
+      return (
+        <svg {...common}>
+          <path d="M12 2.8a9.2 9.2 0 1 0 0 18.4 9.2 9.2 0 0 0 0-18.4Z" stroke="currentColor" strokeWidth="2" />
+          <path d="M10 9v7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M14 9h1.4a2.6 2.6 0 0 1 0 5.2H14V9Z" stroke="currentColor" strokeWidth="2" />
+        </svg>
+      );
+    case "scholar":
+      return (
+        <svg {...common}>
+          <path d="M12 3 2.5 8l9.5 5 9.5-5L12 3Z" fill="currentColor" opacity="0.9" />
+          <path d="M6.2 12.4v4.2c1.7 1.2 3.7 1.8 5.8 1.8s4.1-.6 5.8-1.8v-4.2" stroke="currentColor" strokeWidth="2" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+        </svg>
+      );
   }
 }
 
@@ -572,14 +619,7 @@ function Section({ id, title, subtitle, children }) {
 
 function DetailModal({ kind, title, subtitle, pill, images, summary, bullets, links, onClose }) {
   return (
-    <motion.div
-      className="modalBackdrop"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onMouseDown={onClose}
-      aria-hidden="true"
-    >
+    <motion.div className="modalBackdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose}>
       <motion.div
         className="modal"
         initial={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -600,9 +640,7 @@ function DetailModal({ kind, title, subtitle, pill, images, summary, bullets, li
             <p className="muted">{subtitle}</p>
           </div>
 
-          <button className="iconBtn" onClick={onClose} aria-label="Close">
-            ✕
-          </button>
+          <button className="iconBtn" onClick={onClose} aria-label="Close">✕</button>
         </div>
 
         <div className="modalBody">
@@ -610,11 +648,7 @@ function DetailModal({ kind, title, subtitle, pill, images, summary, bullets, li
             <div className="modalGallery">
               {images.slice(0, 3).map((src) => (
                 <div key={src} className="modalMedia">
-                  <img
-                    src={src}
-                    alt={title}
-                    onError={(e) => { e.currentTarget.style.display = "none"; }}
-                  />
+                  <img src={src} alt={title} onError={(e) => { e.currentTarget.style.display = "none"; }} />
                 </div>
               ))}
             </div>
