@@ -82,7 +82,7 @@ export const projects = [
     title: "Experimental Extraction of Nuclear Statistical Properties",
     timeframe: "Published + Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU) • Visiting Scholar (University of Oslo)",
-    image: "/images/NLD_and_GSF.PNG",
+    image: "/images/statistical.jpg",
     tags: ["Oslo Method", "CE-Oslo Method", "NLD", "γSF"],
     summary:
       "Extracting nuclear statistical properties with the Oslo Method to provide experimental constraints and reduce uncertainties in reaction modeling.",
@@ -99,7 +99,7 @@ export const projects = [
     title: "Indirect Constraints on Neutron-Capture Reaction Rates",
     timeframe: "Published + Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU) • Visiting Scholar (University of Oslo)",
-    image: "/images/92nb.webp",
+    image: "/images/TALYS.png",
     tags: ["Hauser–Feshbach", "TALYS", "NLD", "γSF"],
     summary:
       "Constraining astrophysical (n,γ) rates by incorporating experimentally extracted statistical inputs into Hauser–Feshbach calculations.",
@@ -115,7 +115,7 @@ export const projects = [
     title: "Core-Collapse and Thermonuclear Supernova Nucleosynthesis Modeling",
     timeframe: "Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU) • Visiting Scholar (University of Oslo)",
-    image: "/images/92nb.webp",
+    image: "/images/supernova.png",
     tags: ["NuGrid", "PPN", "WinNet", "p-process"],
     summary:
       "Simulating nucleosynthesis in core-collapse and thermonuclear supernova environments using experimentally constrained reaction rates in post-processing networks.",
@@ -131,7 +131,7 @@ export const projects = [
     title: "Extraction of Gamow–Teller and Fermi Strength via Charge-Exchange Reactions",
     timeframe: "Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU)",
-    image: "/images/ce-oslo.webp",
+    image: "/images/accelerator.png",
     tags: ["Charge-Exchange", "Multipole Decomposition Analysis", "DWBA", "Gamow–Teller"],
     summary:
       "Extracting Gamow–Teller and Fermi transition strengths from charge-exchange data using multipole decomposition analysis (MDA) to reduce theoretical uncertainties.",
@@ -148,7 +148,7 @@ export const projects = [
     title: "Indirect Constraints on Charged-Current Neutrino–Nucleus Cross Sections",
     timeframe: "Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU)",
-    image: "/images/ce-oslo.webp",
+    image: "/images/neutrino.png",
     tags: ["Gamow–Teller", "Fermi", "Charged-Current", "MARLEY"],
     summary:
       "Constraining charged-current neutrino–nucleus cross sections using experimentally extracted transition strengths to improve predictions for detectors and astrophysical applications.",
@@ -164,7 +164,7 @@ export const projects = [
     title: "LENDA Detector Upgrade and Performance Testing",
     timeframe: "Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU)",
-    image: "/images/lenda.webp",
+    image: "/images/lenda.png",
     tags: ["Instrumentation", "Neutrons", "Scintillators"],
     summary:
       "Contributing to the LENDA upgrade through detector testing and performance characterization to improve neutron-detection capabilities for upcoming experiments.",
