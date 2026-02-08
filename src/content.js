@@ -99,7 +99,7 @@ export const projects = [
     title: "Indirect Constraints on Neutron-Capture Reaction Rates",
     timeframe: "Published + Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU) • Visiting Scholar (University of Oslo)",
-    image: "/images/TALYS.png",
+    image: "/images/neutron.jpg",
     tags: ["Hauser–Feshbach", "TALYS", "NLD", "γSF"],
     summary:
       "Constraining astrophysical (n,γ) rates by incorporating experimentally extracted statistical inputs into Hauser–Feshbach calculations.",
