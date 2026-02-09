@@ -65,435 +65,358 @@ export const socialLinks = [
 // NEWS (edit this list in the future)
 // News / Updates (LinkedIn-style posts) — curated from news.txt
 // Tip: keep images in /public/images/news/ and set image: "/images/news/<file>.jpg"
-
 export const news = [
   {
-    id: "2026-01-06-prc-ce-oslo",
+    id: "news-2026-01-06-prc-ce-oslo",
     date: "2026-01-06",
     title: "First first-author Ph.D. paper published in Physical Review C",
-    subtitle: "Charge-Exchange Oslo Method: extracting neutron-capture and weak-interaction rates from one measurement",
-    location: "East Lansing, MI, USA",
-    image: "", // add later
-    highlights: [
-      "Published in Phys. Rev. C 113, 015801",
-      "Introduces/validates the Charge-Exchange Oslo Method for indirect (n,γ) constraints",
-      "Demonstrates feasibility using light-ion beam data with the S800 spectrometer and GRETINA in coincidence",
-      "Establishes a pathway to extend the method to inverse kinematics (p,n+γ) with rare-isotope beams",
+    summary:
+      "Published my first first-author Ph.D. paper in Physical Review C (Phys. Rev. C 113, 015801), introducing and validating the Charge-Exchange Oslo Method to constrain neutron-capture and weak-interaction rates from a single measurement.",
+    images: [],
+    details: [
+      "Demonstrated the method using light-ion beam data with the S800 spectrometer and GRETINA in coincidence.",
+      "Provides a new pathway for indirect constraints on (n,γ) and weak-interaction physics; future extensions include inverse kinematics (p,n+γ) with rare-isotope beams."
     ],
-    links: [
-      // add paper link/DOI later if you want
-    ],
-    tags: ["Publication", "Charge-Exchange Oslo Method", "Neutron Capture", "Nuclear Astrophysics"],
+    links: []
   },
-
   {
-    id: "2025-11-10-rcnp-pandroa-campaign",
+    id: "news-2025-11-10-rcnp-pandroa",
     date: "2025-11-10",
-    title: "Participated in PANDROA experiment campaign at RCNP (Osaka University)",
-    subtitle: "Hands-on work with large-scale experimental operations and analysis workflows",
-    location: "Osaka, Japan",
-    image: "", // add later
-    highlights: [
-      "Contributed to experiment preparation and on-site campaign activities in a large international collaboration (~50 participants)",
-      "Gained hands-on experience with spectrometer operations and detector systems (as described in your post)",
-      "Expanded familiarity with data/DAQ environments and analysis pipelines used by the collaboration",
-      "Travel supported through the Galonsky International Travel Award",
+    title: "Experiment campaign at RCNP (Osaka University) — PANDROA collaboration",
+    summary:
+      "Participated in the PANDROA experiment campaign at RCNP, gaining hands-on experience with large-scale experimental operations and collaboration workflows in an international team.",
+    images: [],
+    details: [
+      "Contributed to campaign activities and strengthened familiarity with the experimental setup and analysis environment used by the collaboration.",
+      "Travel supported through the Galonsky International Travel Award."
     ],
-    links: [],
-    tags: ["Experiment", "RCNP", "Collaboration", "Instrumentation"],
+    links: []
   },
-
   {
-    id: "2025-10-13-galonsky-award",
+    id: "news-2025-10-13-galonsky-award",
     date: "2025-10-13",
-    title: "Awarded the Galonsky International Travel Award",
-    subtitle: "Michigan State University — Department of Physics & Astronomy",
-    location: "Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Recognizes and supports international travel to strengthen long-term research collaborations",
-      "Enables extended visits and hands-on work with international experimental partners",
+    title: "Awarded the Galonsky International Travel Award (MSU)",
+    summary:
+      "Received the Galonsky International Travel Award from the MSU Department of Physics & Astronomy to support international research travel and collaboration building.",
+    images: [],
+    details: [
+      "Supports international engagement and strengthens long-term research collaborations.",
+      "Enabled participation in major international experimental activities."
     ],
-    links: [],
-    tags: ["Award", "Travel", "Collaboration"],
+    links: []
   },
-
   {
-    id: "2025-09-12-sigma-xi",
+    id: "news-2025-09-12-sigma-xi",
     date: "2025-09-12",
     title: "Elected to Sigma Xi — The Scientific Research Honor Society",
-    subtitle: "Membership by nomination in recognition of research achievements and potential",
-    location: "",
-    image: "", // add later
-    highlights: [
-      "Joined an international multidisciplinary community of researchers and engineers",
-      "Recognition tied to demonstrated research achievements and scholarly impact",
-      "Motivation to further contribute to scientific excellence and research culture",
+    summary:
+      "Elected to Sigma Xi by nomination, recognizing research achievements and scholarly potential as part of an international multidisciplinary scientific community.",
+    images: [],
+    details: [
+      "Membership recognizes scientific achievement and encourages continued research excellence.",
+      "Provides access to professional resources and a broad research network."
     ],
-    links: [],
-    tags: ["Honor Society", "Recognition", "Research"],
+    links: []
   },
-
   {
-    id: "2025-08-19-frib-theory-alliance-summer-school",
+    id: "news-2025-08-19-frib-theory-alliance-school",
     date: "2025-08-19",
-    title: "Selected for the FRIB Theory Alliance Summer School",
-    subtitle: "“Emergence of Collective Motion in Atomic Nuclei” (MSU, Aug 19–22, 2025)",
-    location: "Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Opportunity to deepen nuclear theory foundations alongside experimental training",
-      "Engaged with theory-focused lectures and discussions to broaden research perspective",
-      "Strengthened cross-disciplinary collaboration between theory and experiment",
+    title: "Selected for the FRIB Theory Alliance Summer School (MSU)",
+    summary:
+      "Selected to attend the FRIB Theory Alliance Summer School: “Emergence of Collective Motion in Atomic Nuclei” (Aug 19–22, 2025), strengthening theory foundations relevant to my experimental work.",
+    images: [],
+    details: [
+      "Engaged with lectures and discussions connecting nuclear structure, reactions, and collective phenomena.",
+      "Broadened perspective at the theory–experiment interface for ongoing research."
     ],
-    links: [],
-    tags: ["Summer School", "Nuclear Theory", "FRIB", "Professional Development"],
+    links: []
   },
-
   {
-    id: "2025-07-25-beaver-island-school-hackathon",
+    id: "news-2025-07-25-beaver-island-school-hackathon",
     date: "2025-07-25",
-    title: "Summer school & hackathon: Open Questions and Research Tools in Nuclear Astrophysics",
-    subtitle: "Beaver Island, Michigan (July 21–25, 2025)",
-    location: "Beaver Island, MI, USA",
-    image: "", // add later
-    highlights: [
-      "Participated in lectures on open questions in nuclear astrophysics and related tools",
-      "Collaborated in a hackathon format on real research challenges in team settings",
-      "Gained hands-on experience with the ‘winnet’ astrophysical reaction network",
-      "Expanded scientific network through cross-institution collaboration",
+    title: "Summer school & hackathon on nuclear astrophysics tools (Beaver Island)",
+    summary:
+      "Participated in a summer school and hackathon on open questions and research tools in nuclear astrophysics, including hands-on work with reaction-network modeling.",
+    images: [],
+    details: [
+      "Worked with the WinNet astrophysical reaction network and collaborated in team-based problem solving.",
+      "Expanded scientific network and practical modeling skills."
     ],
-    links: [],
-    tags: ["Summer School", "Hackathon", "Reaction Networks", "Nuclear Astrophysics"],
+    links: []
   },
-
   {
-    id: "2025-07-01-oslo-visiting-scientist",
+    id: "news-2025-07-01-oslo-visiting-scientist",
     date: "2025-07-01",
-    title: "Completed a fully funded Visiting Scientist Scholar stay at the University of Oslo",
-    subtitle: "April–July research stay supporting experiments and major Ph.D. thesis analysis",
-    location: "Oslo, Norway",
-    image: "", // add later
-    highlights: [
-      "Participated in experiments and advanced a major component of Ph.D. thesis work",
-      "Strengthened collaborations with the Oslo Nuclear Research Group and colleagues",
-      "Built long-term connections and broadened international research experience",
+    title: "Completed Visiting Scientist Scholar stay at the University of Oslo",
+    summary:
+      "Completed a fully funded Visiting Scientist Scholar research stay at the University of Oslo (April–July), advancing major components of my Ph.D. thesis work and strengthening international collaborations.",
+    images: [],
+    details: [
+      "Participated in experiments and advanced analysis during the visit.",
+      "Built long-term collaborations with the Oslo Nuclear Research Group."
     ],
-    links: [],
-    tags: ["Visiting Scientist", "University of Oslo", "Collaboration", "Ph.D."],
+    links: []
   },
-
   {
-    // Note: your draft shows “2024-06-08” but the post text says “Conference 2025” and “June 8–13”.
-    // If your website needs strict archival matching, change date back to "2024-06-08".
-    id: "2025-06-08-siren-italy",
+    id: "news-2025-06-08-siren-italy",
     date: "2025-06-08",
-    title: "Presented at the siREN International Conference (s-, i-, & r-process Element Nucleosynthesis)",
-    subtitle: "Poster + 5-minute talk on Oslo-method analysis for 92Nb",
-    location: "Giulianova, Italy",
-    image: "", // add later
-    highlights: [
-      "Presented results from the 90Zr(α,d+γ) experiment at the Oslo Cyclotron Laboratory (SiRi + OSCAR)",
-      "Applied the Oslo Method to extract NLD and γSF of 92Nb (experimental constraints for model inputs)",
-      "Used results as inputs for reaction modeling (e.g., TALYS) toward constraining 91Nb(n,γ)92Nb",
-      "Connected nuclear physics results to astrophysical implications for 92Nb production scenarios",
+    title: "Poster + short talk at the siREN International Conference (Italy)",
+    summary:
+      "Presented Oslo-method analysis of 92Nb at the siREN International Conference (June 8–13), connecting experimental nuclear inputs to astrophysical implications for nucleosynthesis.",
+    images: [],
+    details: [
+      "Presented results from the 90Zr(α,d+γ) experiment at the Oslo Cyclotron Laboratory (SiRi + OSCAR).",
+      "Extracted NLD and γSF of 92Nb and discussed how these constraints impact reaction modeling (e.g., TALYS) and 91Nb(n,γ)92Nb."
     ],
-    links: [],
-    tags: ["Conference", "Oslo Method", "92Nb", "Gamma Strength", "Nuclear Astrophysics"],
+    links: []
   },
-
   {
-    id: "2025-04-25-phi-kappa-phi",
+    id: "news-2025-04-25-phi-kappa-phi",
     date: "2025-04-25",
     title: "Invited to Phi Kappa Phi Honor Society",
-    subtitle: "Recognition for sustained academic excellence at Michigan State University",
-    location: "Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Invitation-only honor society recognizing top academic performance across disciplines",
-      "Expanded access to professional resources, awards opportunities, and scholar networks",
+    summary:
+      "Invited to the Phi Kappa Phi Honor Society in recognition of sustained academic excellence at Michigan State University.",
+    images: [],
+    details: [
+      "Invitation-only honor society recognizing top academic performance across disciplines.",
+      "Supports scholarly development through resources, awards, and networks."
     ],
-    links: [],
-    tags: ["Honor Society", "Academic Excellence", "MSU"],
+    links: []
   },
-
   {
-    id: "2024-12-13-hep-instrumentation-certificate",
+    id: "news-2024-12-13-hep-instrumentation-certificate",
     date: "2024-12-13",
     title: "Completed Graduate Certificate in Instrumentation in High Energy Physics (GPA 4.0)",
-    subtitle: "Michigan State University (TRAIN-MI program)",
-    location: "Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Training in advanced sensors for particle/radiation detection and quantum devices",
-      "Experience with front-end electronics, DAQ, and systems-level instrumentation design",
-      "Broadened instrumentation expertise alongside nuclear physics specialization",
+    summary:
+      "Completed the MSU Graduate Certificate in Instrumentation in High Energy Physics (TRAIN-MI) with a 4.0 GPA, strengthening expertise in detectors, electronics, and DAQ systems.",
+    images: [],
+    details: [
+      "Training included advanced sensors, particle/radiation detection, and instrumentation concepts.",
+      "Broadened systems-level skills supporting experimental nuclear physics work."
     ],
-    links: [],
-    tags: ["Certificate", "Instrumentation", "High Energy Physics", "DAQ"],
+    links: []
   },
-
   {
-    id: "2024-11-03-argonne-campaign-gsf",
+    id: "news-2024-11-03-argonne-campaign-gsf",
     date: "2024-11-03",
-    title: "Participated in an experiment campaign at Argonne National Laboratory",
-    subtitle: "Focused on studies related to low-energy enhancement in γ-ray strength functions",
-    location: "Argonne National Laboratory, IL, USA",
-    image: "", // add later
-    highlights: [
-      "Contributed to campaign operations (setup, coordination, and/or data-taking support as applicable)",
-      "Strengthened practical experience with experimental workflows and instrumentation",
-      "Built connections with collaborators working on γSF measurements and analysis",
+    title: "Experiment campaign at Argonne National Laboratory",
+    summary:
+      "Participated in an experiment campaign at Argonne National Laboratory, contributing to efforts connected to γ-ray strength function studies and experimental workflows.",
+    images: [],
+    details: [
+      "Strengthened hands-on experience with campaign operations and collaboration execution.",
+      "Expanded connections with collaborators working on γSF measurements and analysis."
     ],
-    links: [],
-    tags: ["Experiment", "Argonne", "Gamma Strength Function", "Instrumentation"],
+    links: []
   },
-
   {
-    id: "2024-10-16-pprocess-workshop-budapest",
+    id: "news-2024-10-16-pprocess-workshop-budapest",
     date: "2024-10-16",
-    title: "Oral presentation at the 8th p-process Workshop",
-    subtitle: "Future RCNP measurements and Charge-Exchange Oslo Method developments",
-    location: "Budapest, Hungary",
-    image: "", // add later
-    highlights: [
-      "Presented planned 92Zr(3He,t+γ)92Nb work and connections to the 92Nb cosmochronometer",
-      "Discussed Charge-Exchange Oslo Method for indirect constraints and validation strategy",
-      "Engaged with an expert community focused on p-process nucleosynthesis",
+    title: "Oral presentation at the 8th p-process Workshop (Budapest)",
+    summary:
+      "Gave an oral presentation at the 8th p-process Workshop, discussing future measurements and Charge-Exchange Oslo Method developments relevant to 92Nb studies.",
+    images: [],
+    details: [
+      "Presented planned 92Zr(3He,t+γ)92Nb work and its connection to the 92Nb cosmochronometer.",
+      "Discussed methodological advances enabling indirect constraints for nuclear astrophysics."
     ],
-    links: [],
-    tags: ["Talk", "p-process", "92Nb", "Charge Exchange", "Workshop"],
+    links: []
   },
-
   {
-    id: "2024-09-15-npa-xi-dresden",
+    id: "news-2024-09-15-npa-xi-dresden",
     date: "2024-09-15",
-    title: "Poster + short talk at Nuclear Physics in Astrophysics XI (NPA-XI)",
-    subtitle: "Charge-Exchange Oslo Method for indirect neutron-capture constraints",
-    location: "TU Dresden, Germany",
-    image: "", // add later
-    highlights: [
-      "Presented development of the Charge-Exchange Oslo Method and promising test results",
-      "Highlighted novel use of charge-exchange reactions combined with Oslo-method concepts",
-      "Discussed extraction of astrophysical (n,γ) information using S800 + GRETINA coincidence data",
+    title: "Poster + short talk at Nuclear Physics in Astrophysics XI (Dresden)",
+    summary:
+      "Presented the Charge-Exchange Oslo Method at NPA-XI (TU Dresden), highlighting indirect neutron-capture constraints using coincidence data and Oslo-type analysis concepts.",
+    images: [],
+    details: [
+      "Discussed the approach and validation strategy using S800 + GRETINA coincidence measurements.",
+      "Engaged with the international nuclear astrophysics community and received valuable feedback."
     ],
-    links: [],
-    tags: ["Conference", "Poster", "Talk", "Nuclear Astrophysics", "Oslo Method"],
+    links: []
   },
-
   {
-    id: "2024-09-08-npa-school-xi-stolpen",
+    id: "news-2024-09-08-npa-school-xi",
     date: "2024-09-08",
-    title: "Attended Nuclear Physics in Astrophysics School XI",
-    subtitle: "Selected among ~30 participants worldwide",
-    location: "Stolpen, Germany",
-    image: "", // add later
-    highlights: [
-      "Training across experimental nuclear physics, reactions, theory, and multi-messenger astrophysics",
-      "Participated in hands-on facility visits and focused topical training days",
-      "Strengthened network and broadened scientific toolkit for Ph.D. research",
+    title: "Attended Nuclear Physics in Astrophysics School XI (Stolpen)",
+    summary:
+      "Attended the Nuclear Physics in Astrophysics School XI as one of ~30 selected participants worldwide, broadening training across experiments, reactions, and astrophysical applications.",
+    images: [],
+    details: [
+      "Participated in focused training days spanning nuclear astrophysics topics and methods.",
+      "Expanded network and strengthened foundations supporting Ph.D. research."
     ],
-    links: [],
-    tags: ["Summer School", "Training", "Nuclear Astrophysics"],
+    links: []
   },
-
   {
-    id: "2024-09-03-peradeniya-panelist",
+    id: "news-2024-09-03-peradeniya-panelist",
     date: "2024-09-03",
-    title: "Invited panelist: “Career Opportunities with a Physics Degree”",
-    subtitle: "Department of Physics orientation program (University of Peradeniya)",
-    location: "Sri Lanka (remote/invited)",
-    image: "", // add later
-    highlights: [
-      "Shared perspectives on graduate school, research careers, and academic pathways",
-      "Participated alongside professionals from diverse institutions and sectors",
-      "Contributed as an alumnus to support students exploring physics career options",
+    title: "Invited panelist: Career opportunities with a physics degree (University of Peradeniya)",
+    summary:
+      "Invited panelist for the University of Peradeniya Department of Physics orientation program, sharing experiences on graduate study, research, and career pathways with students.",
+    images: [],
+    details: [
+      "Discussed professional development and research opportunities in physics.",
+      "Contributed as an alumnus to support student mentoring and outreach."
     ],
-    links: [],
-    tags: ["Outreach", "Panel", "Mentoring", "University of Peradeniya"],
+    links: []
   },
-
   {
-    id: "2024-08-20-msu-travel-fellowship",
+    id: "news-2024-08-20-msu-travel-fellowship",
     date: "2024-08-20",
     title: "Awarded MSU Graduate School Travel Fellowship",
-    subtitle: "Support for presenting research at professional conferences",
-    location: "Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Competitive travel support to present ongoing research at conferences",
-      "Enables broader dissemination of results and growth through professional networking",
+    summary:
+      "Received a Graduate School Travel Fellowship from Michigan State University to support presenting research and participating in professional conferences.",
+    images: [],
+    details: [
+      "Supports dissemination of ongoing research and professional networking.",
+      "Enables engagement with the broader scientific community."
     ],
-    links: [],
-    tags: ["Fellowship", "Travel", "Professional Development"],
+    links: []
   },
-
   {
-    id: "2024-08-15-msc-physics",
+    id: "news-2024-08-15-msc-physics",
     date: "2024-08-15",
     title: "Completed M.Sc. in Physics (GPA 4.0) during Ph.D.",
-    subtitle: "Michigan State University",
-    location: "Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Completed graduate coursework and research credits toward the M.Sc. milestone",
-      "Strengthened theoretical foundation alongside ongoing Ph.D. research progress",
+    summary:
+      "Completed my M.Sc. in Physics at Michigan State University with a 4.0 GPA while progressing through my Ph.D. program and research at FRIB.",
+    images: [],
+    details: [
+      "Graduate coursework strengthened theory foundations supporting experimental research.",
+      "Milestone completed alongside ongoing Ph.D. research responsibilities."
     ],
-    links: [],
-    tags: ["Degree", "M.Sc.", "Academic Milestone"],
+    links: []
   },
-
   {
-    id: "2024-07-14-ebss-argonne",
+    id: "news-2024-07-14-ebss-argonne",
     date: "2024-07-14",
-    title: "Presented at the 21st Exotic Beam Summer School (EBSS2024)",
-    subtitle: "Hands-on rare-isotope beam training at Argonne National Laboratory",
-    location: "Chicago / Argonne National Laboratory, IL, USA",
-    image: "", // add later
-    highlights: [
-      "Poster presentation as part of Ph.D. training and professional development",
-      "Combined lectures with lab activities using modern instrumentation",
-      "Expanded exposure to rare-isotope beam science and facility-scale workflows",
+    title: "Poster presentation at the 21st Exotic Beam Summer School (EBSS2024)",
+    summary:
+      "Presented a poster at EBSS2024, combining lectures and hands-on rare-isotope beam training at Argonne National Laboratory.",
+    images: [],
+    details: [
+      "Expanded exposure to rare-isotope beam science and instrumentation workflows.",
+      "Strengthened connections with participants and instructors across the community."
     ],
-    links: [],
-    tags: ["Summer School", "Poster", "Rare Isotopes", "Argonne"],
+    links: []
   },
-
   {
-    id: "2024-05-27-oslo-nld-gsf-workshop",
+    id: "news-2024-05-27-oslo-nld-gsf-workshop",
     date: "2024-05-27",
-    title: "Poster presentation at the 9th Workshop on Nuclear Level Density and Gamma Strength",
-    subtitle: "University of Oslo, Norway",
-    location: "Oslo, Norway",
-    image: "", // add later
-    highlights: [
-      "Presented Ph.D. work in an expert forum spanning experiment and theory",
-      "Gained feedback and insights supporting ongoing analysis directions",
+    title: "Poster at the 9th Workshop on Nuclear Level Density and Gamma Strength (Oslo)",
+    summary:
+      "Presented a poster at the 9th Workshop on Nuclear Level Density and Gamma Strength at the University of Oslo, engaging with experts across experiment and theory.",
+    images: [],
+    details: [
+      "Received feedback and insights that helped refine analysis directions.",
+      "Strengthened professional connections in the Oslo-method community."
     ],
-    links: [],
-    tags: ["Poster", "NLD", "Gamma Strength", "Workshop"],
+    links: []
   },
-
   {
-    id: "2024-05-10-phd-candidacy",
+    id: "news-2024-05-10-phd-candidacy",
     date: "2024-05-10",
     title: "Advanced to Ph.D. candidacy (GPA 4.0 milestone)",
-    subtitle: "Academic milestone reached early in the Ph.D. journey",
-    location: "Michigan State University / FRIB",
-    image: "", // add later
-    highlights: [
-      "Reached Ph.D. candidacy milestone with strong academic performance",
-      "Acknowledged the support of advisor, committee, and research groups",
+    summary:
+      "Advanced to Ph.D. candidacy at Michigan State University with a 4.0 GPA, marking a key academic milestone during my graduate training and research at FRIB.",
+    images: [],
+    details: [
+      "Candidacy milestone reflects progress in coursework and research preparation.",
+      "Grateful for support from my advisor, committee, and collaborators."
     ],
-    links: [],
-    tags: ["Ph.D.", "Milestone", "MSU", "FRIB"],
+    links: []
   },
-
   {
-    id: "2023-11-24-frib-fellowship-graham",
+    id: "news-2023-11-24-frib-fellowship-graham",
     date: "2023-11-24",
-    title: "Awarded FRIB Laboratory Fellowship and the Herbert T. Graham Scholarship",
-    subtitle: "Recognition supporting graduate research progress and academic excellence",
-    location: "Michigan State University / FRIB",
-    image: "", // add later
-    highlights: [
-      "Received competitive funding/recognition supporting graduate training and research",
-      "Strengthened support for conference travel, research execution, and professional development (as applicable)",
+    title: "Awarded FRIB Laboratory Fellowship and Herbert T. Graham Scholarship",
+    summary:
+      "Received the FRIB Laboratory Fellowship and the Herbert T. Graham Scholarship, supporting graduate research progress and recognizing academic excellence.",
+    images: [],
+    details: [
+      "Competitive funding and recognition to support research training and professional development.",
+      "Strengthened capacity for research execution and community engagement."
     ],
-    links: [],
-    tags: ["Fellowship", "Scholarship", "FRIB", "MSU"],
+    links: []
   },
-
   {
-    id: "2023-09-01-irena-ukakuren-tokyo",
+    id: "news-2023-09-01-irena-ukakuren-tokyo",
     date: "2023-09-01",
-    title: "First Ph.D. poster presentation at IReNA-Ukakuren (Tokyo, Japan)",
-    subtitle: "Advancing professional development in nuclear astrophysics and beyond",
-    location: "Tokyo, Japan",
-    image: "", // add later
-    highlights: [
-      "Presented early Ph.D. research results in an international setting",
-      "Built new connections and received feedback supporting future work",
+    title: "First Ph.D. poster presentation at IReNA-Ukakuren (Tokyo)",
+    summary:
+      "Presented my first Ph.D. poster at the IReNA-Ukakuren meeting in Tokyo, marking an early milestone in international scientific communication and networking.",
+    images: [],
+    details: [
+      "Received feedback that helped shape early research direction and plans.",
+      "Built connections with researchers across nuclear astrophysics and related fields."
     ],
-    links: [],
-    tags: ["Poster", "IReNA", "Conference", "Nuclear Astrophysics"],
+    links: []
   },
-
   {
-    id: "2023-05-21-cenam-irena",
+    id: "news-2023-05-21-cenam-irena",
     date: "2023-05-21",
     title: "CeNAM Frontiers Meeting + IReNA Frontiers Summer School (2023)",
-    subtitle: "First conference and first summer school experience",
-    location: "",
-    image: "", // add later
-    highlights: [
-      "Participated in a major nuclear astrophysics meeting and associated training program",
-      "Engaged with lectures, discussions, and networking with the research community",
+    summary:
+      "Participated in the CeNAM Frontiers Meeting and the IReNA Frontiers Summer School, building foundations in nuclear astrophysics and expanding my scientific network.",
+    images: [],
+    details: [
+      "First conference and first summer school experience as part of early Ph.D. training.",
+      "Engaged in lectures, discussions, and networking with the research community."
     ],
-    links: [],
-    tags: ["Conference", "Summer School", "CeNAM", "IReNA"],
+    links: []
   },
-
   {
-    id: "2023-05-16-frib-gra",
+    id: "news-2023-05-16-frib-gra-start",
     date: "2023-05-16",
-    title: "Started as a Graduate Research Assistant at FRIB",
-    subtitle: "Charge-Exchange Nuclear Astrophysics group (Advisor: Prof. Remco Zegers)",
-    location: "Facility for Rare Isotope Beams (FRIB), Michigan State University",
-    image: "", // add later
-    highlights: [
-      "Began research appointment within the charge-exchange nuclear astrophysics program",
-      "Focused on experimental nuclear physics methods relevant to astrophysical applications",
+    title: "Started as a Graduate Research Assistant at FRIB (MSU)",
+    summary:
+      "Began my Graduate Research Assistant position at the Facility for Rare Isotope Beams (FRIB), joining the charge-exchange nuclear astrophysics program under Prof. Remco Zegers.",
+    images: [],
+    details: [
+      "Started research on experimental nuclear physics methods relevant to nucleosynthesis and weak-interaction applications.",
+      "Joined a collaborative environment connecting experiments, analysis, and modeling."
     ],
-    links: [],
-    tags: ["Position", "FRIB", "Graduate Research", "Charge Exchange"],
+    links: []
   },
-
   {
-    id: "2023-05-07-bbc-documentary",
+    id: "news-2023-05-07-bbc-documentary",
     date: "2023-05-07",
     title: "Invited for a BBC documentary interview",
-    subtitle: "Interview focused on personal academic journey and achievements",
-    location: "",
-    image: "", // add later
-    highlights: [
-      "Recognized through an invitation to share accomplishments and educational pathway",
-      "Expressed gratitude to schools, institutions, and mentors supporting the journey",
+    summary:
+      "Invited to participate in a BBC documentary interview highlighting my academic journey and achievements, with gratitude to mentors and institutions that supported my path.",
+    images: [],
+    details: [
+      "Opportunity to share personal academic and professional development story.",
+      "Reflected on the importance of mentorship and community support."
     ],
-    links: [],
-    tags: ["Media", "Interview", "Milestone"],
+    links: []
   },
-
   {
-    id: "2022-08-27-started-phd-msu-frib",
+    id: "news-2022-08-27-started-phd-msu-frib",
     date: "2022-08-27",
     title: "Started Ph.D. in Nuclear Physics at Michigan State University / FRIB",
-    subtitle: "Beginning of graduate training and research at a leading rare-isotope facility",
-    location: "East Lansing, MI, USA",
-    image: "", // add later
-    highlights: [
-      "Began Ph.D. program and research trajectory connected with FRIB’s experimental program",
-      "Launched graduate research training in experimental nuclear physics and nuclear astrophysics",
+    summary:
+      "Started my Ph.D. in Nuclear Physics at Michigan State University, based at the Facility for Rare Isotope Beams (FRIB), beginning graduate training and a new research chapter.",
+    images: [],
+    details: [
+      "Launched Ph.D. research training within a leading rare-isotope facility environment.",
+      "Began building expertise in experimental nuclear physics and nuclear astrophysics."
     ],
-    links: [],
-    tags: ["Ph.D.", "MSU", "FRIB", "Academic Start"],
+    links: []
   },
-
   {
-    id: "2022-08-25-bsc-top-of-batch",
+    id: "news-2022-08-25-bsc-top-of-batch",
     date: "2022-08-25",
     title: "Graduated B.Sc. (Honours) in Physics — top of batch with multiple awards",
-    subtitle: "University of Peradeniya (Overall GPA 3.90; strong Physics/Math GPAs)",
-    location: "University of Peradeniya, Sri Lanka",
-    image: "", // add later
-    highlights: [
-      "Graduated with First Class Honours and ranked top in the graduating cohort",
-      "Received multiple departmental medals/prizes and faculty-level academic recognitions",
-      "Subsequently gained admission to multiple fully funded Ph.D. programs in the U.S.",
+    summary:
+      "Graduated from the University of Peradeniya with a B.Sc. (Honours) in Physics (First Class), ranked top of the batch, and received multiple awards and medals for academic excellence.",
+    images: [],
+    details: [
+      "Overall GPA 3.90 with strong Physics and Mathematics GPAs (as noted in your post).",
+      "Later received admission to multiple fully funded Ph.D. programs in the United States."
     ],
-    links: [],
-    tags: ["Degree", "Awards", "University of Peradeniya", "Academic Excellence"],
-  },
+    links: []
+  }
 ];
 
 // Research projects
