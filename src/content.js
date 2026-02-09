@@ -18,11 +18,11 @@ export const profile = {
 // Header navigation
 export const nav = [
   { id: "home", label: "Home" },
-  { id: "news", label: "News" },
   { id: "research", label: "Research" },
   { id: "publications", label: "Publications" },
   { id: "teaching", label: "Teaching" },
   { id: "awards", label: "Awards" },
+  { id: "news", label: "News" },
   { id: "contact", label: "Contact" }
 ];
 
