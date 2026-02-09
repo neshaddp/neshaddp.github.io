@@ -659,6 +659,60 @@ input:focus, textarea:focus{
   word-break: normal;
 }
 
+/* ===== Force gradient titles across site (paste at end of file) ===== */
+
+/* Research project card titles */
+.projectBody .h4{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 850;
+}
+
+/* Publications titles */
+.pubTitle{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 850;
+}
+
+/* Teaching card titles */
+#teaching .h4{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 850;
+}
+
+/* ===== Make item/card titles white (Projects / Publications / Teaching / News) ===== */
+
+.projectBody .h4,
+.pubTitle,
+#teaching .h4,
+.newsTitle{
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important; /* important for iOS/Safari */
+  background: none !important;
+}
+
+/* News titles */
+.newsTitle{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 850;
+}
+
+
 /* ===== Gradient ONLY for section headers (h2) ===== */
 .section .h2{
   background: linear-gradient(90deg, var(--accent), var(--accent2));
