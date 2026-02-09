@@ -346,7 +346,7 @@ export default function App() {
                 <div className="newsLeft">
                   <div className="newsDate">{formatDate(n.date)}</div>
                   <div className="newsTitle">{n.title}</div>
-                  <div className="muted">{n.summary}</div>
+                  <div className="newsSummary">{n.summary}</div>
                 </div>
 
                 {n.images?.length ? (
