@@ -730,9 +730,9 @@ input:focus, textarea:focus{
 
 /* HERO spacing tweaks (Home only) */
 .hero .h1{
-  margin-bottom: 40px; /* gap between name and highlight bar */
+  margin-bottom: 25px; /* gap between name and highlight bar */
 }
 
 .hero .kicker{
-  margin-bottom: 18px; /* gap between highlight bar and first paragraph */
+  margin-bottom: 25px; /* gap between highlight bar and first paragraph */
 }
