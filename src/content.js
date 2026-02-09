@@ -23,7 +23,6 @@ export const nav = [
   { id: "publications", label: "Publications" },
   { id: "teaching", label: "Teaching" },
   { id: "awards", label: "Awards" },
-  { id: "service", label: "Service" },
   { id: "contact", label: "Contact" }
 ];
 
