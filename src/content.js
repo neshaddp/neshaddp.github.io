@@ -72,7 +72,7 @@ export const news = [
     title: "First first-author Ph.D. paper published in Physical Review C",
     summary:
       "Published my first first-author Ph.D. paper in Physical Review C (Phys. Rev. C 113, 015801), introducing the Charge-Exchange Oslo Method to extract neutron-capture cross sections and weak-interaction information from a single measurement.",
-    images: [],
+    images: ["/images/news/CEOslopaper.jpg"],
     details: [
       "Paper: “Extraction of Neutron Capture Cross Section on 92Zr Using the Charge-Exchange Oslo Method” (Phys. Rev. C 113, 015801).",
       "Project was completed ~1.5 years earlier (before my Ph.D. oral exam) and later finalized through full collaboration and publication workflow.",
@@ -107,7 +107,7 @@ export const news = [
     title: "Awarded the Galonsky International Travel Award (MSU)",
     summary:
       "Received the Galonsky International Travel Award from the MSU Department of Physics & Astronomy, supporting longer research stays with international collaborators and strengthening global scientific connections.",
-    images: [],
+    images: ["/images/news/MSU.jpg"],
     details: [
       "Award supports research visits to international collaborators and extended stays to strengthen scientific collaboration.",
       "Recognizes research momentum and supports international engagement tied to my Ph.D. program."
@@ -305,7 +305,7 @@ export const news = [
     title: "Awarded MSU Graduate School Travel Fellowship",
     summary:
       "Received the MSU Graduate School Travel Fellowship to support travel for presenting my research at professional conferences.",
-    images: [],
+    images: ["/images/news/MSU.jpg"],
     details: [
       "Fellowship supports dissemination of research at conferences and professional meetings.",
       "Recognizes academic progress and supports broader scientific engagement."
@@ -379,7 +379,7 @@ export const news = [
     title: "Awarded FRIB Laboratory Fellowship and the Herbert T. Graham Scholarship",
     summary:
       "Awarded a Fellowship from the Facility for Rare Isotope Beams (FRIB) Laboratory and the Herbert T. Graham Scholarship at Michigan State University, supporting my graduate research and training.",
-    images: [],
+    images: ["/images/news/pandora.jpg"],
     details: [
       "Recognized with FRIB Laboratory Fellowship support and the Herbert T. Graham Scholarship at MSU.",
       "These awards support continued research progress and professional development."
