@@ -9,7 +9,8 @@ import {
   teaching,
   awards,
   contactForm,
-  socialLinks
+  socialLinks,
+  affiliationLogos
 } from "./content";
 
 function useActiveSection(sectionIds) {
@@ -171,6 +172,26 @@ export default function App() {
                 <p className="lead leadJustify">{profile.subtitle}</p>
               )}
 
+              {/* Affiliation logos */}
+              {affiliationLogos?.length ? (
+                <div className="affLogoRow" aria-label="Affiliations">
+                  {affiliationLogos.map((logo) => (
+                    <a
+                      key={logo.name}
+                      className={`affLogoChip ${logo.variant === "light" ? "light" : "dark"}`}
+                      href={logo.href || "#"}
+                      target={logo.href ? "_blank" : undefined}
+                      rel={logo.href ? "noreferrer" : undefined}
+                      aria-label={logo.name}
+                      title={logo.name}
+                      onClick={(e) => { if (!logo.href) e.preventDefault(); }}
+                    >
+                      <img className="affLogoImg" src={logo.src} alt={logo.name} />
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+                
 
               {/* Requested: remove ALL buttons/links from Home hero */}
   
