@@ -37,12 +37,12 @@ export const socialLinks = [
   },
   {
     label: "Google Scholar",
-    href: "#",
+    href: "https://scholar.google.com/citations?user=t-ZDjaoAAAAJ&hl=en",
     icon: "scholar"
   },
   {
     label: "ORCID",
-    href: "#",
+    href: "https://orcid.org/0009-0002-4451-4874",
     icon: "orcid"
   },
   {
@@ -57,7 +57,7 @@ export const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/neshad1996?igsh=N21uNmxxNjloZXQ5&utm_source=qr",
     icon: "instagram"
   }
 ];
