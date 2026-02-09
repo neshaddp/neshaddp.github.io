@@ -48,12 +48,11 @@ export default function App() {
   const [openNews, setOpenNews] = useState(null);
 
   const [showAllNews, setShowAllNews] = useState(false);
-  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const sortedNews = useMemo(() => [...(news || [])].sort((a, b) => (a.date < b.date ? 1 : -1)), []);
   const visibleNews = showAllNews ? sortedNews : sortedNews.slice(0, 6);
 
-  const visibleProjects = showAllProjects ? (projects || []) : (projects || []).slice(0, 4);
+  const visibleProjects = projects || [];
 
   useEffect(() => {
     const onKey = (e) => {
@@ -205,17 +204,6 @@ export default function App() {
 
         {/* RESEARCH */}
         <Section id="research" title="Research" subtitle="Selected projects — click a card for details.">
-          <div className="newsTopRow">
-            <div className="muted">
-              Showing {visibleProjects.length} of {(projects || []).length}
-            </div>
-
-            {(projects || []).length > 4 ? (
-              <button className="btn small ghost" type="button" onClick={() => setShowAllProjects((v) => !v)}>
-                {showAllProjects ? "Collapse" : "Show all projects"}
-              </button>
-            ) : null}
-          </div>
 
           <div className="grid">
             {visibleProjects.map((p, idx) => (
