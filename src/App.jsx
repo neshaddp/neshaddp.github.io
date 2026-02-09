@@ -359,6 +359,18 @@ export default function App() {
               </motion.button>
             ))}
           </div>
+
+            {sortedNews.length > 6 ? (
+             <div className="newsBottomActions">
+              <button
+                className="btn small ghost"
+                type="button"
+                onClick={() => setShowAllNews((v) => !v)}
+              >
+                {showAllNews ? "Collapse" : "Show all news"}
+              </button>
+            </div>
+          ) : null}
         </Section>
 
         {/* CONTACT */}
