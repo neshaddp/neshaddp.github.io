@@ -736,3 +736,50 @@ input:focus, textarea:focus{
 .hero .kicker{
   margin-bottom: 25px; /* gap between highlight bar and first paragraph */
 }
+
+/* Affiliation logos row (Home / Hero) */
+.affLogoRow{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px; /* space after paragraphs */
+  max-width: 70ch;
+}
+
+.affLogoChip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.affLogoChip:hover{
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+
+/* Best for transparent logos */
+.affLogoChip.dark{
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+}
+
+/* Best for logos with dark text / bad contrast on dark */
+.affLogoChip.light{
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(255,255,255,0.20);
+}
+
+.affLogoImg{
+  height: 26px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+}
