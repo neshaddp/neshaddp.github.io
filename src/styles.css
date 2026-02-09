@@ -721,3 +721,9 @@ input:focus, textarea:focus{
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+.newsBottomActions{
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
