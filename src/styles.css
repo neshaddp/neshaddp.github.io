@@ -150,7 +150,12 @@ border-bottom: 1px solid var(--line);
 }
 
 .brandDot{
-  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
+  flex: 0 0 auto;
 }
 
 .navLinks{
