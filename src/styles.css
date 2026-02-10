@@ -125,9 +125,22 @@ a:hover{ text-decoration:underline; text-underline-offset:3px; }
 .headerInner{
   min-height: 68px;
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* brand | links | actions */
+  grid-template-columns: 1fr auto;  /* brand | links (right) */
   align-items: center;
   gap: 12px;
+}
+
+.navLinks{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end; /* push links to the right */
+  gap: 8px;
+  flex-wrap:wrap;
+}
+
+/* Hide navActions on desktop since it only contains burger (which is hidden anyway) */
+@media (min-width: 981px){
+  .navActions{ display:none; }
 }
 
 .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-0.02em; justify-self: start; }
@@ -137,14 +150,6 @@ a:hover{ text-decoration:underline; text-underline-offset:3px; }
   box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 .brandText{ white-space:nowrap; }
-
-.navLinks{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 8px;
-  flex-wrap:wrap;
-}
 
 .navActions{
   display:flex;
