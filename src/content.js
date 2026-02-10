@@ -13,7 +13,7 @@ export const profile = {
 
  
   // Files in /public
-  cvUrl: "/cv.pdf",
+  cvUrl: "/Neshad_CV.pdf",
   headshotUrl: "/images/profile.webp"
 };
 
