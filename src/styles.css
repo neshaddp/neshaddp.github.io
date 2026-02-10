@@ -789,6 +789,14 @@ input:focus, textarea:focus{
 /* Mobile-only cleanup for the Home logos + spacing before profile card */
 @media (max-width: 980px){
 
+  /* HERO spacing tweaks (Home only) */
+  .hero .h1{
+    margin-bottom: 20px; /* gap between name and highlight bar */
+  }
+
+  .hero .kicker{
+    margin-bottom: 25px; /* gap between highlight bar and first paragraph */
+  }
   /* 1) Bring logos row back to the tighter/previous look on mobile */
   .affLogoRow{
     margin-top: 10px;     /* adjust: 6–12px */
