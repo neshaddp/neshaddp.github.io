@@ -791,7 +791,7 @@ input:focus, textarea:focus{
 
   /* HERO spacing tweaks (Home only) */
   .hero .h1{
-    margin-bottom: 20px; /* gap between name and highlight bar */
+    margin-bottom: 25px; /* gap between name and highlight bar */
   }
 
   .hero .kicker{
@@ -818,7 +818,17 @@ input:focus, textarea:focus{
   /* 2) Add more gap between the logos row and the profile picture/card */
   /* In mobile, your right column drops below, so this adds spacing before the card */
   .profileCard{
-    margin-top: 18px;     /* adjust: 14–28px */
+    margin-top: 20px;     /* adjust: 14–28px */
+  }
+
+  /* Make the highlight bar text wrap nicely on mobile */
+    .kicker{
+    display: inline-block;     /* better text wrapping than inline-flex */
+    max-width: 100%;
+    text-align: center;        /* center both wrapped lines */
+    margin: 0 auto 14px;       /* center the pill under your name */
+    white-space: normal;
+    text-wrap: balance;        /* modern browsers: balances line breaks */
   }
 }
 
