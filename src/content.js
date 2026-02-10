@@ -631,7 +631,7 @@ export const publications = [
     title: "Single-nucleon transfer unveils NiCu cycle in astrophysical X-ray bursts",
     venue: "O'Shea et. al (2026)",
     status: "Submitted",
-    links: [{ label: "Physical Review Letters (PRL)", href: "https://doi.org/10.21203/rs.3.rs-7660136/v1" }]
+    links: [{ label: "Preprint", href: "https://doi.org/10.21203/rs.3.rs-7660136/v1" }]
   },
   {
     title: "Determination of proton and neutron contributions to the 0+gs →2+1 excitations in 42Si and 44S using inelastic proton scattering in inverse kinematics and intermediate energy Coulomb excitation",
