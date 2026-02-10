@@ -122,25 +122,36 @@ border-bottom: 1px solid var(--line);
 }
 
 /* (6) Center the nav links nicely */
+/* Ensure the whole header row is vertically centered */
 .headerInner{
-min-height: 68px;
-align-items: center;
-gap: 12px;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
 }
 
-/*.brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-0.02em; justify-self: start; }*/
+/* Brand: clean vertical alignment */
 .brand{
-  display: flex;
-  align-items: center;     /* ✅ vertical center for name + dot */
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+
+  /* IMPORTANT: remove grid-only behavior */
+  justify-self: auto;
+
+  line-height: 1;
+  padding: 0;
+}
+
+.brandText{
+  line-height: 1;
+  display: inline-block;
 }
 
 .brandDot{
-width:10px; height:10px; border-radius:999px;
-background: var(--accent);
-box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
+  display: inline-block;
 }
-.brandText{ white-space:nowrap; }
 
 .navLinks{
 display:flex;
