@@ -519,7 +519,8 @@ export const projects = [
       "Targets key statistical inputs in nuclei where experimental constraints are scarce or unavailable",
       "Performs experiments using transfer and charge-exchange (CE) reactions across multiple systems",
       "Extracts nuclear level densities (NLDs) and γ-ray strength functions (γSFs) using Oslo-method techniques",
-      "Develops and applies the CE-Oslo method to extend Oslo-type extractions to charge-exchange reactions"
+      "Develops and applies the CE-Oslo method to extend Oslo-type extractions to charge-exchange reactions",
+      "(AI generated image)"
     ],
     links: []
   },
@@ -528,14 +529,15 @@ export const projects = [
     title: "Indirect Constraints on Neutron-Capture Reaction Rates",
     timeframe: "Published + Ongoing",
     role: "Graduate Research Assistant (FRIB/MSU) • Visiting Scholar (University of Oslo)",
-    image: "/images/neutron.webp",
+    image: "/images/neutron_new.jpg",
     tags: ["Hauser–Feshbach", "TALYS", "NLD", "γSF"],
     summary:
       "Constraining astrophysical (n,γ) rates by incorporating experimentally extracted statistical inputs into Hauser–Feshbach calculations.",
     bullets: [
       "Focuses on neutron-capture rates relevant to nucleosynthesis and cosmochronometry",
       "Combines experimentally extracted NLD and γSF with model systematics to reduce reaction-rate uncertainties",
-      "Performs Hauser–Feshbach calculations using TALYS and evaluates the impact of nuclear-input variations"
+      "Performs Hauser–Feshbach calculations using TALYS and evaluates the impact of nuclear-input variations",
+      "(Image credit: Aaron Couture-LANL)"
     ],
     links: []
   },
@@ -552,7 +554,7 @@ export const projects = [
       "Propagates experimentally constrained neutron-capture rates into nucleosynthesis calculations",
       "Runs post-processing simulations using NuGrid (PPN) and WinNet across CCSN and SNe Ia trajectories",
       "Quantifies how nuclear-physics constraints shift predicted p-process yields and addresses key model discrepancies",
-      "Image credit: NASA"
+      "(Image credit: NASA)"
     ],
     links: []
   },
@@ -569,7 +571,8 @@ export const projects = [
       "Targets weak-interaction nuclear inputs relevant to neutrino physics and nuclear astrophysics",
       "Performs charge-exchange measurements and constructs angular-distribution observables",
       "Applies MDA with DWBA-based templates to isolate isovector transition components",
-      "Extracts Gamow–Teller and Fermi strengths for use in neutrino–nucleus cross-section calculations"
+      "Extracts Gamow–Teller and Fermi strengths for use in neutrino–nucleus cross-section calculations",
+      "(AI generated image)"
     ],
     links: []
   },
@@ -585,7 +588,8 @@ export const projects = [
     bullets: [
       "Uses experimentally extracted Gamow–Teller and Fermi strengths as key nuclear inputs",
       "Computes charged-current neutrino–nucleus cross sections (including low-momentum-transfer limits) using MARLEY",
-      "Benchmarks and updates cross-section inputs for applications in neutrino detection and astrophysical modeling"
+      "Benchmarks and updates cross-section inputs for applications in neutrino detection and astrophysical modeling",
+      "(Image credit: APS/Alan Stonebraker)"
     ],
     links: []
   },
