@@ -33,6 +33,10 @@ html { color-scheme: dark; }
   --shadow: 0 18px 44px rgba(0,0,0,0.10);
 }
 
+html { scroll-behavior: smooth; }
+
+.section { scroll-margin-top: 90px; }
+
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 
