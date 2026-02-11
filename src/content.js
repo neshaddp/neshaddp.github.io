@@ -28,6 +28,7 @@ export const nav = [
   { id: "contact", label: "Contact" }
 ];
 
+/*
 // Affiliation logos shown on the Home section
 export const affiliationLogos = [
   { name: "Michigan State University", src: "/images/logos/MSU.jpg", href: "https://pa.msu.edu", variant: "light" },
@@ -39,7 +40,7 @@ export const affiliationLogos = [
   { name: "University of Oslo", src: "/images/logos/UiO.png", href: "https://www.mn.uio.no/fysikk/english/", variant: "light" },
   { name: "Norwegian Nuclear Research Centre (NNRC)", src: "/images/logos/NNRC.svg", href: "https://www.nnrc.uio.no/english/", variant: "light" }
 ];
-
+*/
 // Social links (icons rendered in Contact section)
 // You can update URLs later here only.
 export const socialLinks = [
