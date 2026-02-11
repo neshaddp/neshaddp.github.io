@@ -409,7 +409,7 @@ export default function App() {
 
               <div className="spacer" />
 
-              <h3 className="h4">Phone</h3>
+              <h3 className="h4"></h3>
               <p className="muted">
                 <a href={`tel:${(profile.phone || "").replace(/[^\d+]/g, "")}`}>
                   {profile.phone}
