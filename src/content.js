@@ -623,13 +623,13 @@ export const publications = [
   {
     title:
       "Experimental study on supernova neutrino-induced nucleosynthesis of 92Nb",
-    venue: "Physical Review Letters (PRL)",
+    venue: "TBD",
     status: "Ongoing",
     links: []
   },
   {
     title: "Charged-current neutrino-208Pb cross sections via the 208Pb(3He,t) charge-exchange reaction",
-    venue: "Physical Review C (PRC)",
+    venue: "TBD",
     status: "Ongoing",
     links: []
   },
